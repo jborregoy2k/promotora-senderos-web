@@ -1,18 +1,33 @@
 import { ContactBand, CorporatePage, PageHero } from "../components";
 
-const items = [
-  ["Senderos del Río", "Soacha · Cundinamarca", "En construcción", "480 viviendas", "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85"],
-  ["Reserva de la Sabana", "Mosquera · Cundinamarca", "Últimas unidades", "312 viviendas", "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=85"],
-  ["Parques de Occidente", "Facatativá · Cundinamarca", "Próximo lanzamiento", "240 viviendas", "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=85"],
-  ["Altos de Primavera", "Zipaquirá · Cundinamarca", "Entregado", "360 viviendas", "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"],
-  ["Bosques de San Juan", "Madrid · Cundinamarca", "Entregado", "280 viviendas", "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"],
-  ["Portal de los Andes", "Tunja · Boyacá", "Entregado", "420 viviendas", "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"],
+const projects = [
+  {
+    name: "Avanti",
+    location: "El Retiro · Antioquia",
+    image: "https://www.promotorasenderos.com/wp-content/uploads/2019/01/Fachada-Avanti.jpg",
+    description: "Apartamentos de 1, 2 y 3 alcobas en el sector Martín Pescador, a cinco minutos del parque principal de El Retiro y junto al parque lineal de la quebrada La Agudelo.",
+    facts: ["Jardines y balcones", "Domótica", "Zona de mascotas", "Ascensor", "Chimenea", "Terrazas"],
+    contact: "avanti@promotorasenderos.com",
+  },
+  {
+    name: "Senderos de Suramérica",
+    location: "Itagüí · Antioquia",
+    image: "https://www.promotorasenderos.com/wp-content/uploads/2017/02/senderos-10-560x560.jpg",
+    description: "Proyecto de construcción tradicional localizado en una zona de alta valorización de Itagüí, con apartamentos de 2, 3 y 4 alcobas.",
+    facts: ["79 apartamentos", "84 parqueaderos", "Piscina", "Salón social", "Gimnasio", "Juegos infantiles"],
+    contact: "ventas@promotorasenderos.com",
+  },
 ];
 
 export default function Proyectos() {
   return <CorporatePage>
-    <PageHero eyebrow="Nuestro portafolio" title="Proyectos que se convierten en hogar." text="Vivienda bien ubicada, espacios pensados para la vida y comunidades con futuro." image="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=85" />
-    <section className="section"><div className="container"><div className="filter-row"><button className="selected">Todos</button><button>En venta</button><button>En construcción</button><button>Entregados</button></div><div className="project-grid catalog">{items.map(([name, place, status, homes, image]) => <article className="project-card" key={name}><div className="project-image"><img src={image} alt="" /><span className="status">{status}</span></div><div className="project-info"><p>{place}</p><h3>{name}</h3><div><span>{homes}</span><a href="/contacto" aria-label={`Solicitar información de ${name}`}>↗</a></div></div></article>)}</div></div></section>
+    <PageHero eyebrow="Nuestros proyectos" title="Espacios con identidad y sentido de lugar." text="Proyectos residenciales desarrollados con diseño funcional, calidad y una relación armónica con el entorno." image="https://www.promotorasenderos.com/wp-content/uploads/2019/01/Fachada-Avanti.jpg" />
+    <section className="section"><div className="container real-projects">
+      {projects.map((project, index) => <article className={`real-project ${index % 2 ? "reverse" : ""}`} key={project.name}>
+        <div className="real-project-image"><img src={project.image} alt={`Proyecto ${project.name}`} /></div>
+        <div className="real-project-copy"><div className="eyebrow">{project.location}</div><h2>{project.name}</h2><p>{project.description}</p><div className="amenity-grid">{project.facts.map(fact => <span key={fact}>{fact}</span>)}</div><a className="text-link" href={`mailto:${project.contact}`}>Solicitar información <b>→</b></a></div>
+      </article>)}
+    </div></section>
     <ContactBand />
   </CorporatePage>;
 }

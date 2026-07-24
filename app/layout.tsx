@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
   const base = new URL(`${protocol}://${host}`);
   const title = "Promotora Senderos | Vivienda VIS en Colombia";
-  const description = "Desarrollamos proyectos de Vivienda de Interés Social que conectan a las familias colombianas con bienestar, ciudad y oportunidades.";
+  const description = "Promotora Senderos integra planeación, modelación, presupuestos, cálculos y ejecución para la gerencia de proyectos de construcción en Antioquia.";
   return {
     metadataBase: base,
     title: { default: title, template: "%s | Promotora Senderos" },

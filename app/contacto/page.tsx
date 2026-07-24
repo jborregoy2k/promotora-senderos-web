@@ -7,7 +7,7 @@ export default function Contacto() {
   const [sent, setSent] = useState(false);
   function submit(e: FormEvent) { e.preventDefault(); setSent(true); }
   return <CorporatePage>
-    <section className="contact-hero"><div className="container contact-layout"><div className="contact-intro"><div className="eyebrow light">Contacto</div><h1>Tu próximo hogar comienza con una conversación.</h1><p>Cuéntanos qué buscas. Nuestro equipo te orientará sobre proyectos, financiación y proceso de compra.</p><div className="contact-data"><div><small>LÍNEA COMERCIAL</small><a href="tel:+576017450800">+57 (601) 745 0800</a></div><div><small>CORREO</small><a href="mailto:contacto@senderos.com.co">contacto@senderos.com.co</a></div><div><small>HORARIO</small><span>Lun — Vie · 8:00 a.m. — 5:30 p.m.</span></div></div></div>
+    <section className="contact-hero"><div className="container contact-layout"><div className="contact-intro"><div className="eyebrow light">Contacto</div><h1>Conversemos sobre tu próximo proyecto.</h1><p>Solicita información sobre Avanti, Senderos de Suramérica o nuestros servicios de gerencia de proyectos.</p><div className="contact-data"><div><small>LÍNEAS DE ATENCIÓN</small><a href="tel:+5744441593">+57 (4) 444 1593</a><a href="tel:+573127770990">+57 312 777 0990</a></div><div><small>CORREOS</small><a href="mailto:avanti@promotorasenderos.com">avanti@promotorasenderos.com</a><a href="mailto:ventas@promotorasenderos.com">ventas@promotorasenderos.com</a></div><div><small>HORARIO AVANTI</small><span>Lun — Dom · 10:00 a.m. — 6:00 p.m.</span></div></div></div>
       <form className="contact-form" onSubmit={submit}>
         {sent ? <div className="form-success"><strong>¡Gracias por escribirnos!</strong><p>Recibimos tus datos. Un asesor se pondrá en contacto contigo.</p><button type="button" onClick={() => setSent(false)}>Enviar otra consulta</button></div> : <>
           <h2>Déjanos tus datos</h2><p>Los campos marcados con * son obligatorios.</p>
@@ -20,6 +20,6 @@ export default function Contacto() {
         </>}
       </form>
     </div></section>
-    <section className="office-band"><div className="container"><div><div className="eyebrow">Oficina principal</div><h2>Bogotá D.C.</h2><p>Carrera 11 # 93–53 · Piso 6<br />Colombia</p></div><div className="map-placeholder"><span>Promotora Senderos</span><b>Bogotá</b></div></div></section>
+    <section className="office-band"><div className="container"><div><div className="eyebrow">Proyecto Senderos de Suramérica</div><h2>Itagüí, Antioquia</h2><p>Calle 31 # 61–28<br />Colombia</p></div><div className="map-placeholder"><span>Promotora Senderos</span><b>Itagüí</b></div></div></section>
   </CorporatePage>;
 }

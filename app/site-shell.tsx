@@ -7,9 +7,8 @@ import { useEffect, useState } from "react";
 const navigation = [
   ["/nosotros", "Nosotros"],
   ["/proyectos", "Proyectos"],
-  ["/enfoque-vis", "Enfoque VIS"],
+  ["/servicios", "Servicios"],
   ["/sostenibilidad", "Sostenibilidad"],
-  ["/novedades", "Novedades"],
 ];
 
 export function Brand() {
@@ -48,9 +47,9 @@ export function SiteFooter() {
     <footer className="footer">
       <div className="container footer-top">
         <div className="footer-brand"><Brand /><p>Construimos vivienda.<br />Impulsamos futuro.</p></div>
-        <div className="footer-col"><h3>Compañía</h3><Link href="/nosotros">Quiénes somos</Link><Link href="/sostenibilidad">Sostenibilidad</Link><Link href="/novedades">Novedades</Link></div>
-        <div className="footer-col"><h3>Proyectos</h3><Link href="/proyectos">En venta</Link><Link href="/proyectos">En construcción</Link><Link href="/enfoque-vis">Guía de compra VIS</Link></div>
-        <div className="footer-col"><h3>Contacto</h3><p>Bogotá D.C., Colombia</p><a href="tel:+576017450800">+57 (601) 745 0800</a><a href="mailto:contacto@senderos.com.co">contacto@senderos.com.co</a></div>
+        <div className="footer-col"><h3>Compañía</h3><Link href="/nosotros">Quiénes somos</Link><Link href="/servicios">Servicios</Link><Link href="/sostenibilidad">Nuestra filosofía</Link></div>
+        <div className="footer-col"><h3>Proyectos</h3><Link href="/proyectos">Avanti</Link><Link href="/proyectos">Senderos de Suramérica</Link><Link href="/contacto">Solicitar información</Link></div>
+        <div className="footer-col"><h3>Contacto</h3><p>Itagüí, Antioquia · Colombia</p><a href="tel:+5744441593">+57 (4) 444 1593</a><a href="tel:+573127770990">+57 312 777 0990</a><a href="mailto:ventas@promotorasenderos.com">ventas@promotorasenderos.com</a></div>
       </div>
       <div className="container footer-bottom"><p>© 2026 Promotora Senderos S.A.S.</p><div><a href="#">Política de privacidad</a><a href="#">Tratamiento de datos</a><a href="#">Términos y condiciones</a></div></div>
     </footer>

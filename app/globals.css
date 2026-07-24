@@ -28,15 +28,9 @@ p { line-height: 1.75; }
 
 .site-header { height: 84px; position: absolute; inset: 0 0 auto; z-index: 20; background: rgba(7, 18, 32, .68); border-bottom: 1px solid rgba(255,255,255,.18); color: white; }
 .nav-wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand > span:last-child { display: flex; flex-direction: column; line-height: 1; }
-.brand b { font-size: 8px; letter-spacing: .26em; font-weight: 500; margin-bottom: 4px; }
-.brand strong { font: 700 18px/1 "Manrope"; letter-spacing: .08em; }
-.brand-mark { width: 28px; height: 33px; position: relative; display: flex; align-items: end; gap: 3px; transform: skewY(-12deg); }
-.brand-mark i { background: #36a6ef; width: 7px; display: block; }
-.brand-mark i:nth-child(1) { height: 18px; }
-.brand-mark i:nth-child(2) { height: 27px; }
-.brand-mark i:nth-child(3) { height: 33px; background: white; }
+.brand { display: inline-flex; align-items: center; flex-shrink: 0; width: 188px; height: 57px; }
+.brand-mark { display: block; width: 100%; height: 100%; background: url("/logo-senderos-oficial.png") center/contain no-repeat; filter: brightness(0) invert(1); }
+.brand-mark i, .brand > span:last-child { display: none; }
 .main-nav { display: flex; align-items: center; gap: 30px; font-size: 14px; }
 .main-nav > a:not(.button) { opacity: .82; padding: 31px 0 28px; border-bottom: 3px solid transparent; }
 .main-nav > a:hover, .main-nav > a.active { opacity: 1; border-bottom-color: #3aa4ed; }
@@ -50,6 +44,7 @@ p { line-height: 1.75; }
 
 .hero { min-height: 790px; height: 96vh; position: relative; display: flex; align-items: center; overflow: hidden; color: white; }
 .hero-media { position: absolute; inset: 0; background: url("https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2200&q=90") center 45%/cover; transform: scale(1.02); }
+.hero-media.senderos-hero { background-image: url("https://www.promotorasenderos.com/wp-content/uploads/2019/01/Fachada-Avanti.jpg"); }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,18,33,.9) 0%, rgba(5,18,33,.63) 48%, rgba(5,18,33,.1) 80%), linear-gradient(0deg, rgba(4,14,26,.45), transparent 45%); }
 .hero-content { position: relative; padding-top: 86px; }
 .hero h1 { font-size: clamp(54px, 6vw, 86px); line-height: .98; max-width: 900px; margin: 25px 0 26px; }
@@ -76,6 +71,7 @@ p { line-height: 1.75; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 52px; }
 .section-heading h2 { margin-top: 20px; }
 .project-grid { display: grid; grid-template-columns: 1.3fr .9fr .9fr; gap: 22px; }
+.project-grid.two-projects { grid-template-columns: 1.25fr .75fr; }
 .project-card { background: white; min-width: 0; }
 .project-image { height: 330px; position: relative; overflow: hidden; background: #ccd5dd; }
 .project-card:not(.project-1) .project-image { height: 265px; }
@@ -90,6 +86,7 @@ p { line-height: 1.75; }
 
 .vis-feature { display: grid; grid-template-columns: 1.18fr .82fr; min-height: 680px; }
 .vis-photo { background: url("https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=1400&q=85") center/cover; }
+.vis-photo.senderos-service-photo { background-image: url("https://www.promotorasenderos.com/wp-content/uploads/2019/01/Render1-560x560.jpg"); }
 .vis-panel { background: var(--blue); color: white; display: flex; flex-direction: column; justify-content: center; padding: 80px clamp(48px, 6vw, 110px); }
 .vis-panel h2 { margin: 24px 0; font-size: clamp(38px, 4.2vw, 60px); }
 .vis-panel p { color: rgba(255,255,255,.75); font-size: 16px; margin-bottom: 30px; }
@@ -127,6 +124,23 @@ p { line-height: 1.75; }
 .split-copy h2 { margin-top: 22px; }
 .split-copy p:first-child { margin-top: 0; }
 .values { background: var(--navy); color: white; }
+.activity { background: var(--pale); }
+.activity-intro { margin-bottom: 60px; }
+.capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.capability-grid article { background: white; min-height: 245px; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.capability-grid span { color: var(--blue); font-size: 11px; font-weight: 700; }
+.capability-grid h3 { margin: 45px 0 12px; font-size: 21px; }
+.capability-grid p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.purpose-band { background: var(--blue); color: white; }
+.purpose-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.purpose-grid article { padding: 85px 65px 85px 0; }
+.purpose-grid article + article { border-left: 1px solid rgba(255,255,255,.2); padding-left: 65px; padding-right: 0; }
+.purpose-grid h2 { font-size: clamp(32px, 3.3vw, 46px); margin: 24px 0; }
+.purpose-grid p { color: rgba(255,255,255,.72); }
+.integrated-process { background: white; }
+.process-flow { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 65px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 24px 0; }
+.process-flow span { font-weight: 600; font-size: 13px; }
+.process-flow i { color: var(--blue); font-style: normal; }
 .value-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .value-grid article { min-height: 310px; padding: 55px 32px; border-right: 1px solid rgba(255,255,255,.12); }
 .value-grid article:first-child { padding-left: 0; }
@@ -144,6 +158,15 @@ p { line-height: 1.75; }
 .filter-row button.selected { color: white; background: var(--blue); border-color: var(--blue); }
 .catalog { grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .catalog .project-image { height: 285px !important; }
+.real-projects { display: flex; flex-direction: column; gap: 110px; }
+.real-project { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 80px; }
+.real-project.reverse .real-project-image { order: 2; }
+.real-project-image { height: 550px; overflow: hidden; }
+.real-project-image img { width: 100%; height: 100%; object-fit: cover; }
+.real-project-copy h2 { margin: 22px 0; }
+.real-project-copy p { color: var(--muted); font-size: 16px; }
+.amenity-grid { display: grid; grid-template-columns: 1fr 1fr; margin: 30px 0 10px; border-top: 1px solid var(--line); }
+.amenity-grid span { padding: 13px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 .steps { background: var(--navy); color: white; }
 .steps h2 { margin: 22px 0 55px; }
 .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
@@ -219,6 +242,7 @@ details p { color: var(--muted); max-width: 700px; }
   .container { width: min(100% - 36px, 760px); }
   .section { padding: 80px 0; }
   .site-header { height: 72px; }
+  .brand { width: 164px; height: 50px; }
   .main-nav { position: fixed; inset: 72px 0 0; background: var(--navy); padding: 35px 28px; flex-direction: column; align-items: stretch; gap: 0; transform: translateX(100%); transition: transform .3s ease; }
   .main-nav.is-open { transform: translateX(0); }
   .main-nav > a:not(.button) { font: 500 26px/1.2 "Manrope"; padding: 19px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
@@ -238,8 +262,10 @@ details p { color: var(--muted); max-width: 700px; }
   .vis-feature { grid-template-columns: 1fr; }
   .vis-photo { min-height: 500px; }
   .trust-grid, .value-grid, .steps-grid { grid-template-columns: 1fr 1fr; }
+  .capability-grid { grid-template-columns: 1fr 1fr; }
   .news-grid, .contact-layout { grid-template-columns: 1fr; }
   .manifesto { gap: 45px; }
+  .real-project { gap: 45px; }
   .pillar-grid, .article-grid { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1.4fr 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
@@ -269,6 +295,11 @@ details p { color: var(--muted); max-width: 700px; }
   .vis-panel { padding: 60px 25px; }
   .vis-panel h2 { font-size: 38px; }
   .trust-grid, .value-grid, .steps-grid, .pillar-grid, .article-grid { grid-template-columns: 1fr; }
+  .capability-grid, .purpose-grid { grid-template-columns: 1fr; }
+  .purpose-grid article, .purpose-grid article + article { padding: 60px 0; border-left: 0; }
+  .purpose-grid article + article { border-top: 1px solid rgba(255,255,255,.2); }
+  .process-flow { align-items: stretch; flex-direction: column; }
+  .process-flow i { transform: rotate(90deg); align-self: start; }
   .trust-grid article, .trust-grid article:not(:first-child) { padding: 28px 0; border-right: 0; border-bottom: 1px solid var(--line); min-height: 0; }
   .trust-grid h3 { margin-top: 18px; }
   .cta-inner { padding: 58px 0; flex-direction: column; align-items: start; min-height: 0; }
@@ -279,6 +310,9 @@ details p { color: var(--muted); max-width: 700px; }
   .value-grid article { min-height: 230px; padding: 35px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
   .value-grid h3 { margin-top: 38px; }
   .manifesto, .manifesto.reverse { grid-template-columns: 1fr; }
+  .real-project, .real-project.reverse { grid-template-columns: 1fr; gap: 32px; }
+  .real-project.reverse .real-project-image { order: 0; }
+  .real-project-image { height: 390px; }
   .manifesto.reverse .manifesto-image { order: 0; }
   .manifesto-image { height: 350px; }
   .filter-row { overflow-x: auto; padding-bottom: 5px; }
