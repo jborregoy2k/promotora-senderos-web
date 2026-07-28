@@ -32,7 +32,7 @@ export default function Nosotros() {
           <article><span>02</span><h3>Gerencia de construcción</h3><p>Coordinación integral de equipos, procesos técnicos y ejecución.</p></article>
           <article><span>03</span><h3>Ventas y tramitación</h3><p>Gestión comercial, documentación, entregas y cierre del proyecto.</p></article>
           <article><span>04</span><h3>Estructuración</h3><p>Desarrollo jurídico, financiero, contable y tributario.</p></article>
-          <article><span>05</span><h3>Diseño y construcción</h3><p>Urbanizaciones, edificaciones y obras civiles.</p></article>
+          <article><span>05</span><h3>Diseño y construcción</h3><p>Urbanizaciones, locales comerciales, bodegas, casas y obras civiles.</p></article>
           <article><span>06</span><h3>Costos y presupuestos</h3><p>Planeación financiera, compras, presupuestos y control de costos.</p></article>
         </div>
       </div>
