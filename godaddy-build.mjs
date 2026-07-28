@@ -2,7 +2,7 @@ import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const vinextCli = fileURLToPath(
-  new URL("../node_modules/vinext/dist/cli.js", import.meta.url),
+  new URL("./node_modules/vinext/dist/cli.js", import.meta.url),
 );
 const child = spawn(process.execPath, [vinextCli, "build"], {
   env: {

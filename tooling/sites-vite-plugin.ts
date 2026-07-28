@@ -1,3 +1,4 @@
+// OpenAI Sites build integration; kept outside reserved deployment output folders.
 import { access, cp, mkdir, rm } from "node:fs/promises";
 import { resolve } from "node:path";
 import type { Plugin } from "vite";
