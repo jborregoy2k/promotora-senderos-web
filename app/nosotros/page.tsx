@@ -1,8 +1,27 @@
 import { ContactBand, CorporatePage, PageHero } from "../components";
 
+const manifestoImages = [
+  "/images/fachada-avanti.jpg",
+  "/images/familia-vivienda.jpg",
+  "/images/gerencia-proyectos.jpg",
+  "/images/hero-arquitectura.jpg",
+  "/images/novedad-bienestar.jpg",
+  "/images/novedad-comunidad.jpg",
+  "/images/novedad-construccion.jpg",
+  "/images/novedad-escrituracion.jpg",
+  "/images/novedad-guia-vis.jpg",
+  "/images/novedad-sostenibilidad.jpg",
+  "/images/novedades-oficina.jpg",
+  "/images/render-avanti.jpg",
+  "/images/senderos-suramerica.jpg",
+  "/images/sostenibilidad-energia.jpg",
+  "/images/sostenibilidad-zona-verde.jpg",
+  "/images/vis-vivienda.jpg",
+];
+
 export default function Nosotros() {
   return <CorporatePage>
-    <PageHero eyebrow="Quiénes somos" title="Gerencia de proyectos con visión integral." text="Somos una empresa localizada en Itagüí, dedicada a integrar los procesos que hacen posible una construcción eficiente." image="https://www.promotorasenderos.com/wp-content/uploads/2017/02/fildisi-single-img-17-768x539-768x539.jpg" />
+    <PageHero eyebrow="Quiénes somos" title="Gerencia de proyectos con visión integral." text="Somos una empresa localizada en Rionegro e Itagüí (Antioquia, Colombia), dedicada a integrar los procesos que hacen posible una construcción eficiente." image="/images/Casa 24/IMG_9278.jpg" />
     <section className="section"><div className="container split-copy"><div><div className="eyebrow">Acerca de nosotros</div><h2>Del presupuesto y los planos a la ejecución de obra.</h2></div><div><p>La planeación presupuestal, la modelación, la infraestructura, los cálculos y la ejecución constituyen el núcleo de nuestro trabajo.</p><p>Integramos estos procesos mediante plataformas digitales para responder a las exigencias de áreas, costos y tiempos, y facilitar decisiones informadas durante todo el proyecto.</p></div></div></section>
     <section className="values"><div className="container value-grid"><article><b>01</b><h3>Nuestra pasión</h3><p>Construir sueños.</p></article><article><b>02</b><h3>Nuestra filosofía</h3><p>Soluciones funcionales, estéticas y duraderas con el mejor equipo.</p></article><article><b>03</b><h3>Nuestro diseño</h3><p>Funcionalidad y armonía con la naturaleza a precios competitivos.</p></article><article><b>04</b><h3>Nuestra calidad</h3><p>Profesionales especializados y materiales que cumplen la normativa.</p></article></div></section>
     <section className="section activity">
@@ -24,7 +43,15 @@ export default function Nosotros() {
         <article><div className="eyebrow light">Visión</div><h2>Competitividad con tecnología y sostenibilidad.</h2><p>Nos proyectamos como una empresa reconocida localmente por su capacidad operativa, la integración innovadora de sus procesos y la incorporación de tecnologías que agilicen la gestión y garanticen la sostenibilidad ambiental.</p></article>
       </div>
     </section>
-    <section className="section"><div className="container manifesto"><div className="manifesto-image"><img src="https://www.promotorasenderos.com/wp-content/uploads/2019/01/Render1-560x560.jpg" alt="Interior de uno de los proyectos de Promotora Senderos" /></div><div><div className="eyebrow">Nuestro equipo</div><h2>Experiencia especializada en cada decisión.</h2><p>Ingenieros, arquitectos, contadores y administradores trabajan de forma integrada para ofrecer soluciones prácticas, técnica y financieramente sólidas y a la vanguardia de la tecnología.</p></div></div></section>
+    <section className="section"><div className="container manifesto"><div className="manifesto-image manifesto-slideshow">
+      {manifestoImages.map((image, index) => <img
+        src={image}
+        alt={index === 0 ? "Proyectos y experiencia de Promotora Senderos" : ""}
+        className="manifesto-slide"
+        style={{ animationDelay: `${index * 4}s` }}
+        key={image}
+      />)}
+    </div><div><div className="eyebrow">Nuestro equipo</div><h2>Experiencia especializada en cada decisión.</h2><p>Ingenieros, arquitectos, contadores y administradores trabajan de forma integrada para ofrecer soluciones prácticas, técnica y financieramente sólidas y a la vanguardia de la tecnología.</p></div></div></section>
     <ContactBand />
   </CorporatePage>;
 }

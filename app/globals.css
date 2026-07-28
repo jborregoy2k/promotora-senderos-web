@@ -29,7 +29,7 @@ p { line-height: 1.75; }
 .site-header { height: 84px; position: absolute; inset: 0 0 auto; z-index: 20; background: rgba(7, 18, 32, .68); border-bottom: 1px solid rgba(255,255,255,.18); color: white; }
 .nav-wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; flex-shrink: 0; width: 188px; height: 57px; }
-.brand-mark { display: block; width: 100%; height: 100%; background: url("/logo-senderos-oficial.png") center/contain no-repeat; filter: brightness(0) invert(1); }
+.brand-mark { display: block; width: 100%; height: 100%; background: url("/logo-senderos-oficial.png") center/contain no-repeat; filter: none; }
 .brand-mark i, .brand > span:last-child { display: none; }
 .main-nav { display: flex; align-items: center; gap: 30px; font-size: 14px; }
 .main-nav > a:not(.button) { opacity: .82; padding: 31px 0 28px; border-bottom: 3px solid transparent; }
@@ -43,8 +43,8 @@ p { line-height: 1.75; }
 .menu-button { display: none; }
 
 .hero { min-height: 790px; height: 96vh; position: relative; display: flex; align-items: center; overflow: hidden; color: white; }
-.hero-media { position: absolute; inset: 0; background: url("https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2200&q=90") center 45%/cover; transform: scale(1.02); }
-.hero-media.senderos-hero { background-image: url("https://www.promotorasenderos.com/wp-content/uploads/2019/01/Fachada-Avanti.jpg"); }
+.hero-media { position: absolute; inset: 0; background: url("/images/Casa 24/IMG_9275.jpg") center 45%/cover; transform: scale(1.02); }
+.hero-media.senderos-hero { background-image: url("/images/Casa 24/IMG_9275.jpg"); }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,18,33,.9) 0%, rgba(5,18,33,.63) 48%, rgba(5,18,33,.1) 80%), linear-gradient(0deg, rgba(4,14,26,.45), transparent 45%); }
 .hero-content { position: relative; padding-top: 86px; }
 .hero h1 { font-size: clamp(54px, 6vw, 86px); line-height: .98; max-width: 900px; margin: 25px 0 26px; }
@@ -73,8 +73,8 @@ p { line-height: 1.75; }
 .project-grid { display: grid; grid-template-columns: 1.3fr .9fr .9fr; gap: 22px; }
 .project-grid.two-projects { grid-template-columns: 1.25fr .75fr; }
 .project-card { background: white; min-width: 0; }
-.project-image { height: 330px; position: relative; overflow: hidden; background: #ccd5dd; }
-.project-card:not(.project-1) .project-image { height: 265px; }
+.project-image { width: 100%; aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: #ccd5dd; }
+.project-card:not(.project-1) .project-image { aspect-ratio: 3 / 2; }
 .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .project-card:hover img { transform: scale(1.04); }
 .status { position: absolute; left: 16px; top: 16px; color: white; background: rgba(8,31,54,.83); padding: 8px 11px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
@@ -85,8 +85,8 @@ p { line-height: 1.75; }
 .project-info a { color: var(--blue); font-size: 21px; }
 
 .vis-feature { display: grid; grid-template-columns: 1.18fr .82fr; min-height: 680px; }
-.vis-photo { background: url("https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=1400&q=85") center/cover; }
-.vis-photo.senderos-service-photo { background-image: url("https://www.promotorasenderos.com/wp-content/uploads/2019/01/Render1-560x560.jpg"); }
+.vis-photo { background: url("/images/Casa24/IMG_9278.jpg") center/cover; }
+.vis-photo.senderos-service-photo { background-image: url("/images/Casa24/IMG_9278.jpg"); }
 .vis-panel { background: var(--blue); color: white; display: flex; flex-direction: column; justify-content: center; padding: 80px clamp(48px, 6vw, 110px); }
 .vis-panel h2 { margin: 24px 0; font-size: clamp(38px, 4.2vw, 60px); }
 .vis-panel p { color: rgba(255,255,255,.75); font-size: 16px; margin-bottom: 30px; }
@@ -149,23 +149,43 @@ p { line-height: 1.75; }
 .value-grid p { color: rgba(255,255,255,.6); font-size: 14px; }
 .manifesto { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 90px; }
 .manifesto.reverse .manifesto-image { order: 2; }
-.manifesto-image { height: 500px; }
+.manifesto-image { height: 500px; position: relative; overflow: hidden; background: #ccd5dd; }
 .manifesto-image img { width: 100%; height: 100%; object-fit: cover; }
+.manifesto-slide { position: absolute; inset: 0; opacity: 0; animation: manifesto-gallery 64s linear infinite; }
+@keyframes manifesto-gallery {
+  0% { opacity: 0; transform: scale(1.025); }
+  .625%, 5.625% { opacity: 1; }
+  6.25%, 100% { opacity: 0; transform: scale(1); }
+}
 .manifesto h2 { margin: 24px 0; }
 .manifesto p { color: var(--muted); font-size: 17px; }
 .filter-row { display: flex; gap: 8px; margin-bottom: 40px; }
 .filter-row button { border: 1px solid var(--line); background: white; color: var(--muted); padding: 12px 20px; cursor: pointer; }
 .filter-row button.selected { color: white; background: var(--blue); border-color: var(--blue); }
 .catalog { grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.catalog .project-image { height: 285px !important; }
+.catalog .project-image { aspect-ratio: 4 / 3; }
 .real-projects { display: flex; flex-direction: column; gap: 110px; }
 .real-project { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 80px; }
+.real-project[id] { scroll-margin-top: 32px; }
 .real-project.reverse .real-project-image { order: 2; }
-.real-project-image { height: 550px; overflow: hidden; }
+.real-project-image { width: 100%; aspect-ratio: 16 / 10; overflow: hidden; }
 .real-project-image img { width: 100%; height: 100%; object-fit: cover; }
+.project-gallery { position: relative; background: #ccd5dd; }
+.project-gallery-slide { position: absolute; inset: 0; opacity: 0; animation: casa24-gallery 80s linear infinite; }
+@keyframes casa24-gallery {
+  0% { opacity: 0; transform: scale(1.025); }
+  .5%, 4.5% { opacity: 1; }
+  5%, 100% { opacity: 0; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-gallery-slide { animation: none; }
+  .project-gallery-slide:first-child { opacity: 1; }
+  .manifesto-slide { animation: none; }
+  .manifesto-slide:first-child { opacity: 1; }
+}
 .real-project-copy h2 { margin: 22px 0; }
 .real-project-copy p { color: var(--muted); font-size: 16px; }
-.amenity-grid { display: grid; grid-template-columns: 1fr 1fr; margin: 30px 0 10px; border-top: 1px solid var(--line); }
+.amenity-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2ch; margin: 30px 0 10px; border-top: 1px solid var(--line); }
 .amenity-grid span { padding: 13px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 .steps { background: var(--navy); color: white; }
 .steps h2 { margin: 22px 0 55px; }
@@ -203,6 +223,8 @@ details p { color: var(--muted); max-width: 700px; }
 .contact-data { margin-top: 55px; border-top: 1px solid rgba(255,255,255,.15); }
 .contact-data div { padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.15); display: flex; flex-direction: column; gap: 5px; }
 .contact-data small { color: #73bdf0; letter-spacing: .1em; font-size: 9px; }
+.whatsapp-link { display: inline-flex; align-items: center; align-self: flex-start; gap: 9px; }
+.whatsapp-icon { width: 22px; height: 22px; flex: 0 0 22px; padding: 4px; border-radius: 50%; background: #25d366; }
 .contact-form { background: white; color: var(--ink); padding: 46px; }
 .contact-form h2 { font-size: 34px; }
 .contact-form > p { color: var(--muted); font-size: 13px; margin-bottom: 30px; }
@@ -221,12 +243,12 @@ details p { color: var(--muted); max-width: 700px; }
 .office-band > .container { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
 .office-band h2 { margin: 20px 0 10px; }
 .office-band p { color: var(--muted); }
-.map-placeholder { height: 270px; background: linear-gradient(135deg, #d8e2e9, #bccbd6); position: relative; display: grid; place-content: center; text-align: center; color: var(--blue); }
-.map-placeholder::before, .map-placeholder::after { content: ""; position: absolute; background: rgba(255,255,255,.7); transform: rotate(-12deg); }
-.map-placeholder::before { height: 25px; left: 0; right: 0; top: 42%; }
-.map-placeholder::after { width: 20px; top: 0; bottom: 0; left: 38%; }
-.map-placeholder span, .map-placeholder b { position: relative; z-index: 1; background: white; padding: 5px 10px; }
-.map-placeholder span { font-size: 10px; letter-spacing: .1em; }
+.map-placeholder { height: 320px; overflow: hidden; background: #d8e2e9; box-shadow: 0 18px 45px rgba(11,26,43,.12); }
+.map-placeholder iframe { display: block; width: 100%; height: 100%; border: 0; }
+.map-block { display: flex; flex-direction: column; align-items: stretch; gap: 16px; }
+.waze-link { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; gap: 11px; align-self: flex-end; padding: 0 22px; color: white; background: #33ccff; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+.waze-link:hover { background: #20bde9; transform: translateY(-2px); }
+.waze-link img { width: 24px; height: 24px; padding: 3px; border-radius: 50%; background: rgba(11,26,43,.16); }
 
 .footer { background: #071423; color: white; padding-top: 75px; }
 .footer-top { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 55px; padding-bottom: 65px; }
@@ -290,7 +312,7 @@ details p { color: var(--muted); max-width: 700px; }
   .desktop-link { display: none; }
   .project-grid, .catalog { grid-template-columns: 1fr; }
   .project-1 { grid-column: auto; }
-  .project-card .project-image { height: 260px !important; }
+  .project-card .project-image { aspect-ratio: 16 / 10; }
   .vis-photo { min-height: 370px; }
   .vis-panel { padding: 60px 25px; }
   .vis-panel h2 { font-size: 38px; }
@@ -312,7 +334,7 @@ details p { color: var(--muted); max-width: 700px; }
   .manifesto, .manifesto.reverse { grid-template-columns: 1fr; }
   .real-project, .real-project.reverse { grid-template-columns: 1fr; gap: 32px; }
   .real-project.reverse .real-project-image { order: 0; }
-  .real-project-image { height: 390px; }
+  .real-project-image { aspect-ratio: 4 / 3; }
   .manifesto.reverse .manifesto-image { order: 0; }
   .manifesto-image { height: 350px; }
   .filter-row { overflow-x: auto; padding-bottom: 5px; }

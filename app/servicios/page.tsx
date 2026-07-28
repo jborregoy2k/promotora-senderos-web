@@ -2,7 +2,7 @@ import { ContactBand, CorporatePage, PageHero } from "../components";
 
 export default function Servicios() {
   return <CorporatePage>
-    <PageHero eyebrow="Servicios" title="Gerencia integral para proyectos de construcción." text="Acompañamos a arquitectos, constructores y promotores con decisiones soportadas en información precisa." image="https://www.promotorasenderos.com/wp-content/uploads/2017/02/fildisi-single-img-17-768x539-768x539.jpg" />
+    <PageHero eyebrow="Servicios" title="Gerencia integral para proyectos de construcción." text="Acompañamos a arquitectos, constructores y promotores con decisiones soportadas en información precisa." image="/images/Casa 24/IMG_2061.jpg" />
     <section className="section"><div className="container split-copy"><div><div className="eyebrow">Lo que hacemos</div><h2>Integramos diseño, presupuesto, tiempo y ejecución.</h2></div><div><p>Nuestro núcleo de trabajo abarca la planeación presupuestal, la modelación de planos, los cálculos, la infraestructura y la ejecución de obra.</p><p>Las plataformas digitales conectan estos procesos para facilitar decisiones oportunas, controlar cambios y mejorar el retorno de cada proyecto.</p></div></div></section>
     <section className="sustain-pillars section"><div className="container"><div className="pillar-grid">
       <article><span>ARQUITECTOS</span><h3>Modelación y coordinación</h3><p>Conversión de planos y topografía a modelos 3D, coordinación de interferencias, cantidades de obra y capacitación digital.</p><strong>2D → 4D</strong><small>Información centralizada y actualizada</small></article>

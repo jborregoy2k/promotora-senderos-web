@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: base,
     title: { default: title, template: "%s | Promotora Senderos" },
     description,
-    icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+    icons: { icon: "/favicon.ico", shortcut: "/favicon.ico" },
     openGraph: { title, description, type: "website", locale: "es_CO", images: [{ url: new URL("/og.png", base).toString(), width: 1733, height: 907, alt: "Promotora Senderos — Construimos hogares. Impulsamos futuro." }] },
     twitter: { card: "summary_large_image", title, description, images: [new URL("/og.png", base).toString()] },
   };

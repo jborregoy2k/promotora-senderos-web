@@ -2,8 +2,10 @@ import Link from "next/link";
 import { SiteFooter, SiteHeader } from "./site-shell";
 
 const projects = [
-  { name: "Avanti", place: "El Retiro · Antioquia", status: "Proyecto residencial", homes: "1, 2 y 3 alcobas", image: "https://www.promotorasenderos.com/wp-content/uploads/2019/01/Fachada-Avanti.jpg" },
-  { name: "Senderos de Suramérica", place: "Itagüí · Antioquia", status: "Proyecto desarrollado", homes: "79 apartamentos", image: "https://www.promotorasenderos.com/wp-content/uploads/2017/02/senderos-10-560x560.jpg" },
+  { id: "casa-24", name: "Casa 24", place: "Rionegro · Antioquia", status: "Proyecto desarrollado", homes: "Vivienda autosostenible", image: "/images/Casa 24/IMG_9280.jpg" },
+  { id: "bodega-tierra-fertil", name: "Bodega Tierra Fértil", place: "La Unión · Antioquia", status: "Diseñado", homes: "Bodega y Locales Comerciales", image: "/images/BodegaTF/Bodega-Tierra-Fertil.jpg" },
+  { id: "avanti", name: "Avanti", place: "El Retiro · Antioquia", status: "Proyecto desarrollado", homes: "32 apartamentos", image: "/images/fachada-avanti.jpg" },
+  { id: "senderos-de-suramerica", name: "Senderos de Suramérica", place: "Itagüí · Antioquia", status: "Proyecto desarrollado", homes: "79 apartamentos", image: "/images/senderos-suramerica.jpg" },
 ];
 
 export default function Home() {
@@ -17,7 +19,7 @@ export default function Home() {
           <div className="container hero-content">
             <div className="eyebrow light">Gerencia de proyectos de construcción</div>
             <h1>Construimos sueños.<br /><span>Integramos soluciones.</span></h1>
-            <p>Planeación, modelación, presupuestos y ejecución articulados para crear proyectos funcionales, estéticos y duraderos.</p>
+            <p>Planeación, modelación, presupuestos, marco jurídico y ejecución articulados para crear proyectos funcionales, estéticos y duraderos.</p>
             <div className="actions">
               <Link className="button button-primary" href="/proyectos">Conoce nuestros proyectos <span>→</span></Link>
               <Link className="button button-ghost" href="/nosotros">Descubre Senderos</Link>
@@ -28,9 +30,9 @@ export default function Home() {
 
         <section className="statement" id="proposito">
           <div className="container statement-grid">
-            <div><div className="eyebrow">Nuestra experiencia</div><h2>Gerenciamos cada proyecto con visión integral.</h2></div>
+            <div><div className="eyebrow">Nuestra experiencia</div><h2>Construimos cada proyecto con visión integral.</h2></div>
             <div className="statement-copy">
-              <p>Desde Itagüí integramos presupuestos, planos, infraestructura, cálculos y ejecución de obra mediante herramientas digitales que permiten tomar mejores decisiones.</p>
+              <p>Integramos presupuestos, planos, infraestructura, cálculos y ejecución de obra mediante herramientas digitales que permiten tomar mejores decisiones.</p>
               <Link className="text-link" href="/servicios">Conoce nuestros servicios <span>→</span></Link>
             </div>
           </div>
@@ -39,9 +41,9 @@ export default function Home() {
         <section className="impact-band" aria-label="Cifras destacadas">
           <div className="container stats">
             <div><strong>360°</strong><span>Gerencia integral de proyectos</span></div>
-            <div><strong>3D + 4D</strong><span>Modelación y programación digital</span></div>
-            <div><strong>2</strong><span>Proyectos residenciales destacados</span></div>
-            <div><strong>1 equipo</strong><span>Arquitectos, ingenieros y financieros</span></div>
+            <div><strong>3D + 4D</strong><span>Modelación BIM y programación digital</span></div>
+            <div><strong>14</strong><span>Proyectos destacados</span></div>
+            <div><strong>1 equipo</strong><span>Arquitectos, ingenieros, asesores jurídicos, contables y financieros</span></div>
           </div>
         </section>
 
@@ -55,7 +57,7 @@ export default function Home() {
               {projects.map((project, index) => (
                 <article className={`project-card project-${index + 1}`} key={project.name}>
                   <div className="project-image"><img src={project.image} alt="" /><span className="status">{project.status}</span></div>
-                  <div className="project-info"><p>{project.place}</p><h3>{project.name}</h3><div><span>{project.homes}</span><Link href="/proyectos" aria-label={`Conocer ${project.name}`}>↗</Link></div></div>
+                  <div className="project-info"><p>{project.place}</p><h3>{project.name}</h3><div><span>{project.homes}</span><Link href={`/proyectos#${project.id}`} aria-label={`Conocer ${project.name}`}>↗</Link></div></div>
                 </article>
               ))}
             </div>
@@ -88,12 +90,12 @@ export default function Home() {
 
         <section className="section news">
           <div className="container">
-            <div className="section-heading"><div><div className="eyebrow">Proyecto Avanti</div><h2>Vivir cerca de la naturaleza.</h2></div><Link className="text-link desktop-link" href="/proyectos">Conoce el proyecto <span>→</span></Link></div>
+            <div className="section-heading"><div><div className="eyebrow">Casa 24</div><h2>Vivir cerca de la naturaleza.</h2></div><Link className="text-link desktop-link" href="/proyectos#casa-24">Conoce el proyecto <span>→</span></Link></div>
             <div className="news-grid">
-              <article className="news-main"><img src="https://www.promotorasenderos.com/wp-content/uploads/2019/01/Render1-560x560.jpg" alt="" /><div><small>EL RETIRO · ANTIOQUIA</small><h3>Apartamentos de 1, 2 y 3 alcobas en un entorno verde y conectado</h3><Link href="/proyectos">Ver proyecto →</Link></div></article>
+              <article className="news-main"><img src="/images/Casa 24/IMG_9283.jpg" alt="" /><div><small>RIONEGRO · ANTIOQUIA</small><h3>Vivienda autosostenible</h3><Link href="/proyectos#casa-24">Ver proyecto →</Link></div></article>
               <div className="news-list">
-                <article><small>ESPACIOS</small><h3>Jardines, balcones, terrazas, chimenea y zona para mascotas</h3><Link href="/proyectos">↗</Link></article>
-                <article><small>UBICACIÓN</small><h3>A cinco minutos del parque principal de El Retiro</h3><Link href="/proyectos">↗</Link></article>
+                <article><small>ESPACIOS</small><h3>Generación de energía solar, aprovechamiento de agua de lluvia, control térmico y acústico</h3><Link href="/proyectos#casa-24">↗</Link></article>
+                <article><small>UBICACIÓN</small><h3>Llanogrande</h3><Link href="/proyectos#casa-24">↗</Link></article>
               </div>
             </div>
           </div>
