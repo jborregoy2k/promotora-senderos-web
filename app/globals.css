@@ -85,8 +85,8 @@ p { line-height: 1.75; }
 .project-info a { color: var(--blue); font-size: 21px; }
 
 .vis-feature { display: grid; grid-template-columns: 1.18fr .82fr; min-height: 680px; }
-.vis-photo { background: url("/images/Casa24/IMG_9278.jpg") center/cover; }
-.vis-photo.senderos-service-photo { background-image: url("/images/Casa24/IMG_9278.jpg"); }
+.vis-photo { background: url("/images/Casa 24/IMG_9278.jpg") center/cover; }
+.vis-photo.senderos-service-photo { background-image: url("/images/Casa 24/IMG_9278.jpg"); }
 .vis-panel { background: var(--blue); color: white; display: flex; flex-direction: column; justify-content: center; padding: 80px clamp(48px, 6vw, 110px); }
 .vis-panel h2 { margin: 24px 0; font-size: clamp(38px, 4.2vw, 60px); }
 .vis-panel p { color: rgba(255,255,255,.75); font-size: 16px; margin-bottom: 30px; }
